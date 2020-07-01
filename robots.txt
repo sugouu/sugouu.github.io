@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: sugouu.github.io/sitemap.xml
+Sitemap: https://sugouu.github.io/sitemap.xml

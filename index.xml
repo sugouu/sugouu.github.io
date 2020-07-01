@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sugo&#39;s Blog</title>
-    <link>sugouu.github.io/</link>
+    <link>https://sugouu.github.io/</link>
     <description>Recent content on Sugo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 01 Jul 2020 11:36:48 +0800</lastBuildDate>
     
-        <atom:link href="sugouu.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://sugouu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>sugouu.github.io/about/</link>
+      <link>https://sugouu.github.io/about/</link>
       <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>sugouu.github.io/about/</guid>
+      <guid>https://sugouu.github.io/about/</guid>
       
         <description>&lt;p&gt;这是Sugo的Blog&lt;/p&gt;
 </description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>about hugo</title>
-      <link>sugouu.github.io/post/golang/about-hugo-of-study-note/</link>
+      <link>https://sugouu.github.io/post/golang/about-hugo-of-study-note/</link>
       <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/golang/about-hugo-of-study-note/</guid>
+      <guid>https://sugouu.github.io/post/golang/about-hugo-of-study-note/</guid>
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。利用github的home pages我们能很简单且无需vps的投入就能有属于自己的blog。&lt;/p&gt;
@@ -118,10 +118,10 @@ $ git push -u origin master
     
     <item>
       <title>php auto_prepend_file、auto_append_file</title>
-      <link>sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</link>
+      <link>https://sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</link>
       <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</guid>
+      <guid>https://sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</guid>
       
         <description>&lt;h1 id=&#34;heading&#34;&gt;基础介绍&lt;/h1&gt;
 &lt;p&gt;auto_prepend_file和auto_append_file属于php配置文件中的数据处理配置选项（Data Handling Configuration Options）。
@@ -133,10 +133,10 @@ auto_prepend_file和auto_append_file的区别一个是在主程序文件之前�
 &lt;ol&gt;
 &lt;li&gt;公共头尾的引用.常见用法是我们用include_once在模板页面引入我们需要的头部以及尾部。但是这样引用一次的做法的不太好的一点是每个需要公共头尾的模板都需要添加上类似这样的一句“include_once(&amp;lsquo;header.tpl&amp;rsquo;)”.使用的auto_prepend_file的话，只需要配置一次auto_prepend_file(path.&amp;lsquo;header.tpl&amp;rsquo;)就好了，尾部类似.
 2.项目工程的环境，我们的项目开发测试发版上线这些过程中都涉及到不同的环境以及数据，我们可以通过设定一个环境标识字符来区分。我们在php.ini中配置
-&lt;img src=&#34;sugouu.github.io/image/auto_append_file.png&#34; alt=&#34;微信截图_20190312153818.png&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://sugouu.github.io/image/auto_append_file.png&#34; alt=&#34;微信截图_20190312153818.png&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;然后在配置的路径上创建php文件如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;sugouu.github.io/image/auto_prepend_file.png&#34; alt=&#34;微信截图_20190312153851.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sugouu.github.io/image/auto_prepend_file.png&#34; alt=&#34;微信截图_20190312153851.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;这样$_SERVER[&amp;lsquo;ENVIRONMENT&amp;rsquo;]这个超全局变量就能在项目工程的任何地方被我们所使用。&lt;/p&gt;
 </description>
       
@@ -144,10 +144,10 @@ auto_prepend_file和auto_append_file的区别一个是在主程序文件之前�
     
     <item>
       <title>php heredoc、nowdoc</title>
-      <link>sugouu.github.io/post/php/php-heredoc-nowdoc/</link>
+      <link>https://sugouu.github.io/post/php/php-heredoc-nowdoc/</link>
       <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/php/php-heredoc-nowdoc/</guid>
+      <guid>https://sugouu.github.io/post/php/php-heredoc-nowdoc/</guid>
       
         <description>&lt;p&gt;&lt;strong&gt;Heredoc 和 Nowdoc 的背景&lt;/strong&gt;
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Here_document&#34;&gt;Here&lt;/a&gt; 文档 在 wiki 上的定义：
@@ -159,9 +159,9 @@ Nowdoc 从 PHP 5.3.0 版本开始支持，他和 Heredoc 的不同之处，仅�
 &lt;p&gt;2.结束表示符必须独占一行，且必须顶格写，最后以 ‘;’ 分号结尾。&lt;/p&gt;
 &lt;p&gt;3.所有引用的字符串中可以包含变量，无需字符串连接符。
 heredoc实例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;sugouu.github.io/image/2773910186.png&#34; alt=&#34;微信截图_20190530174318.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sugouu.github.io/image/2773910186.png&#34; alt=&#34;微信截图_20190530174318.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;nowdoc实例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;sugouu.github.io/image/2169211213.png&#34; alt=&#34;微信截图_20190530174905.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sugouu.github.io/image/2169211213.png&#34; alt=&#34;微信截图_20190530174905.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;特别说明&lt;/strong&gt;：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;php.net RFC 频道已经公布了 PHP 7.3 的 Heredoc 和 Nowdoc 语法更新，此次更新专注于代码可读性:
@@ -179,10 +179,10 @@ Heredocs 和 Nowdocs 的改进将会让你的 PHP 代码更加具有可读性，
     
     <item>
       <title>Golang将日志同时输出到控制台和文件</title>
-      <link>sugouu.github.io/post/golang/golang-output-log-to-file-and-console/</link>
+      <link>https://sugouu.github.io/post/golang/golang-output-log-to-file-and-console/</link>
       <pubDate>Wed, 11 Mar 2020 21:16:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/golang/golang-output-log-to-file-and-console/</guid>
+      <guid>https://sugouu.github.io/post/golang/golang-output-log-to-file-and-console/</guid>
       
         <description>&lt;h1 id=&#34;heading&#34;&gt;问题背景&lt;/h1&gt;
 &lt;p&gt;日常开发当中需要将golang的log包打印的日志同时输出到控制台和文件，应该如何解决这个问题？&lt;/p&gt;
@@ -214,10 +214,10 @@ Heredocs 和 Nowdocs 的改进将会让你的 PHP 代码更加具有可读性，
     
     <item>
       <title>Mac如何在shell脚本当中获取时间</title>
-      <link>sugouu.github.io/post/shell/mac-how-to-get-time-in-shell-script/</link>
+      <link>https://sugouu.github.io/post/shell/mac-how-to-get-time-in-shell-script/</link>
       <pubDate>Mon, 26 Aug 2019 14:00:00 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/shell/mac-how-to-get-time-in-shell-script/</guid>
+      <guid>https://sugouu.github.io/post/shell/mac-how-to-get-time-in-shell-script/</guid>
       
         <description>&lt;h1 id=&#34;macshell&#34;&gt;Mac如何在shell脚本当中获取时间&lt;/h1&gt;
 &lt;h2 id=&#34;heading&#34;&gt;获取今天的时间&lt;/h2&gt;
@@ -297,10 +297,10 @@ usage: date &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;-jnRu&lt;spa
     
     <item>
       <title>Mysql基本操作</title>
-      <link>sugouu.github.io/post/mysql/talk-about-mysql-operation/</link>
+      <link>https://sugouu.github.io/post/mysql/talk-about-mysql-operation/</link>
       <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/mysql/talk-about-mysql-operation/</guid>
+      <guid>https://sugouu.github.io/post/mysql/talk-about-mysql-operation/</guid>
       
         <description>&lt;p&gt;在开始讨论Mysql的基本操作之前我们需要先明确主体，即我们操作的是什么？下面我们忽略一些具体细节来了解一下Mysql这款数据库管理数据的结构和单元。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -467,10 +467,10 @@ Claws   1998-03-17      birthday Gave him a new flea collar
     
     <item>
       <title>学习如何使用mysql的手册</title>
-      <link>sugouu.github.io/post/mysql/learn-how-to-read-mysql-manual/</link>
+      <link>https://sugouu.github.io/post/mysql/learn-how-to-read-mysql-manual/</link>
       <pubDate>Wed, 20 Mar 2019 19:44:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/mysql/learn-how-to-read-mysql-manual/</guid>
+      <guid>https://sugouu.github.io/post/mysql/learn-how-to-read-mysql-manual/</guid>
       
         <description>&lt;p&gt;mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。&lt;/p&gt;
 &lt;p&gt;查看mysql的手册只需要一个问号 + 关键词 就可以了：
@@ -503,10 +503,10 @@ URL: http://dev.mysql.com/doc/refman/5.7/en/show.html
     
     <item>
       <title>golang复用http-request-body</title>
-      <link>sugouu.github.io/post/golang/golang-reuse-http-request-body/</link>
+      <link>https://sugouu.github.io/post/golang/golang-reuse-http-request-body/</link>
       <pubDate>Sat, 20 Oct 2018 15:10:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/golang/golang-reuse-http-request-body/</guid>
+      <guid>https://sugouu.github.io/post/golang/golang-reuse-http-request-body/</guid>
       
         <description>&lt;h2 id=&#34;heading&#34;&gt;问题及场景&lt;/h2&gt;
 &lt;p&gt;业务当中有需要分发http.request.body的场景。比如微信回调消息只能指定一个地址，所以期望可以复制一份消息发给其他服务。由服务B和接收微信回调的服务A一起处理微信回调信息。&lt;/p&gt;
@@ -534,10 +534,10 @@ URL: http://dev.mysql.com/doc/refman/5.7/en/show.html
     
     <item>
       <title>golang-uint类型如何转换成string</title>
-      <link>sugouu.github.io/post/golang/golang-uint-cover-to-string/</link>
+      <link>https://sugouu.github.io/post/golang/golang-uint-cover-to-string/</link>
       <pubDate>Sat, 28 Apr 2018 21:18:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/golang/golang-uint-cover-to-string/</guid>
+      <guid>https://sugouu.github.io/post/golang/golang-uint-cover-to-string/</guid>
       
         <description>&lt;h2 id=&#34;golang-uintstring&#34;&gt;问题golang uint类型如何转换成string&lt;/h2&gt;
 &lt;p&gt;这里值得注意的地方时，本文说的不是uint8，uint64就是uint类型。&lt;/p&gt;
@@ -554,10 +554,10 @@ fmt.Println(c)
     
     <item>
       <title>go如何编写命令行(cli)程序</title>
-      <link>sugouu.github.io/post/golang/how-to-write-a-cli-program-by-go/</link>
+      <link>https://sugouu.github.io/post/golang/how-to-write-a-cli-program-by-go/</link>
       <pubDate>Mon, 19 Feb 2018 11:13:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/golang/how-to-write-a-cli-program-by-go/</guid>
+      <guid>https://sugouu.github.io/post/golang/how-to-write-a-cli-program-by-go/</guid>
       
         <description>&lt;h1 id=&#34;heading&#34;&gt;创建一个命令行程序&lt;/h1&gt;
 &lt;h2 id=&#34;heading-1&#34;&gt;问题&lt;/h2&gt;
@@ -652,10 +652,10 @@ Language is English
     
     <item>
       <title>go如何进行交叉编译</title>
-      <link>sugouu.github.io/post/golang/golang-cross-compile/</link>
+      <link>https://sugouu.github.io/post/golang/golang-cross-compile/</link>
       <pubDate>Fri, 16 Feb 2018 14:44:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/golang/golang-cross-compile/</guid>
+      <guid>https://sugouu.github.io/post/golang/golang-cross-compile/</guid>
       
         <description>&lt;h1 id=&#34;golang&#34;&gt;golang交叉编译&lt;/h1&gt;
 &lt;h2 id=&#34;heading&#34;&gt;问题&lt;/h2&gt;
@@ -725,10 +725,10 @@ Language is English
     
     <item>
       <title>SQL的IN操作符</title>
-      <link>sugouu.github.io/post/mysql/sql-operation-in/</link>
+      <link>https://sugouu.github.io/post/mysql/sql-operation-in/</link>
       <pubDate>Wed, 30 Aug 2017 23:00:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/mysql/sql-operation-in/</guid>
+      <guid>https://sugouu.github.io/post/mysql/sql-operation-in/</guid>
       
         <description>&lt;h2 id=&#34;in&#34;&gt;IN操作符&lt;/h2&gt;
 &lt;p&gt;IN操作符允许我们在WHERE子句中规定多个值。
@@ -762,10 +762,10 @@ Language is English
     
     <item>
       <title>Go编写一个简单的web服务器</title>
-      <link>sugouu.github.io/post/golang/build-a-web-server-by-golang/</link>
+      <link>https://sugouu.github.io/post/golang/build-a-web-server-by-golang/</link>
       <pubDate>Wed, 19 Apr 2017 01:27:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/golang/build-a-web-server-by-golang/</guid>
+      <guid>https://sugouu.github.io/post/golang/build-a-web-server-by-golang/</guid>
       
         <description>&lt;p&gt;Go是一款静态里语言，特点就是拥有极好的并发编程体验。下面是使用Go实现的一个并发，非阻塞的web服务器。&lt;/p&gt;
 &lt;h2 id=&#34;heading&#34;&gt;代码&lt;/h2&gt;
@@ -813,10 +813,10 @@ Language is English
     
     <item>
       <title>mysql修改字段名称</title>
-      <link>sugouu.github.io/post/mysql/mysql-change-column-name/</link>
+      <link>https://sugouu.github.io/post/mysql/mysql-change-column-name/</link>
       <pubDate>Fri, 15 Apr 2016 22:00:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/mysql/mysql-change-column-name/</guid>
+      <guid>https://sugouu.github.io/post/mysql/mysql-change-column-name/</guid>
       
         <description>&lt;h1 id=&#34;mysql&#34;&gt;在mysql当中如果字段创建以后想修改名字怎么办？&lt;/h1&gt;
 &lt;p&gt;alter table 表名 change 旧字段名 新字段名 字段属性;
@@ -830,10 +830,10 @@ Language is English
     
     <item>
       <title>mysql ERROR 1820 (HY000)解决办法</title>
-      <link>sugouu.github.io/post/mysql/mysql-error-1820-hy000-solution/</link>
+      <link>https://sugouu.github.io/post/mysql/mysql-error-1820-hy000-solution/</link>
       <pubDate>Mon, 01 Feb 2016 19:44:01 +0800</pubDate>
       
-      <guid>sugouu.github.io/post/mysql/mysql-error-1820-hy000-solution/</guid>
+      <guid>https://sugouu.github.io/post/mysql/mysql-error-1820-hy000-solution/</guid>
       
         <description>&lt;p&gt;本解决办法是针对如何错误提示：
 ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.
