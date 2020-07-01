@@ -12,13 +12,43 @@
     
     
     <item>
-      <title>About</title>
+      <title>关于</title>
       <link>https://sugouu.github.io/about/</link>
       <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://sugouu.github.io/about/</guid>
       
-        <description>&lt;p&gt;这是Sugo的Blog&lt;/p&gt;
+        <description>&lt;pre&gt;&lt;code&gt;你好，我是Sugo，你也可以称呼我为帅哥.
+
+我是一名程序员，已婚有女，抽烟不喝酒. 
+
+人生苦短，我用 php java python go !
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;扫码+我&lt;/strong&gt; ：
+&lt;img src=&#34;https://sugouu.github.io/image/wx.jpg&#34; alt=&#34;加微信聊&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其他联系方式&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;联系方式&lt;/th&gt;
+&lt;th&gt;地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:author@shuaigg.cn&#34;&gt;author@shuaigg.cn&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;github&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://sugouu.github.io&#34;&gt;sugouu.github.io&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;weibo&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://weibo.com/sugow&#34;&gt;&lt;img src=&#34;http://www.sinaimg.cn/blog/developer/wiki/LOGO_32x32.png&#34; alt=&#34;weibo&#34; title=&#34;weibo&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
       
     </item>
