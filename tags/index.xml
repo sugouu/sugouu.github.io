@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Sugo&#39;s Blog</title>
+    <link>sugouu.github.io/tags/</link>
+    <description>Recent content in Tags on Sugo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Jul 2020 11:36:48 +0800</lastBuildDate>
+    
+	<atom:link href="sugouu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>golang</title>
+      <link>sugouu.github.io/tags/golang/</link>
+      <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
+      
+      <guid>sugouu.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>sugouu.github.io/tags/php/</link>
+      <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
+      
+      <guid>sugouu.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>sugouu.github.io/tags/shell/</link>
+      <pubDate>Mon, 26 Aug 2019 14:00:00 +0800</pubDate>
+      
+      <guid>sugouu.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>sugouu.github.io/tags/mysql/</link>
+      <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
+      
+      <guid>sugouu.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

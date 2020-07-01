@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on Sugo&#39;s Blog</title>
+    <link>sugouu.github.io/tags/php/</link>
+    <description>Recent content in php on Sugo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Jul 2020 11:36:48 +0800</lastBuildDate>
+    
+	<atom:link href="sugouu.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>php auto_prepend_file、auto_append_file</title>
+      <link>sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</link>
+      <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</guid>
+      <description>基础介绍 auto_prepend_file和auto_append_file属于php配置文件中的数据处理配置选项（Data Handling Configuration Option</description>
+    </item>
+    
+    <item>
+      <title>php heredoc、nowdoc</title>
+      <link>sugouu.github.io/post/php/php-heredoc-nowdoc/</link>
+      <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/php/php-heredoc-nowdoc/</guid>
+      <description>Heredoc 和 Nowdoc 的背景 Here 文档 在 wiki 上的定义： 在计算机学科中，here文档，又称作 heredoc、hereis、here-字串或here-脚本，是一个文件</description>
+    </item>
+    
+  </channel>
+</rss>

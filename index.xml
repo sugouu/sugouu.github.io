@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sugo&#39;s Blog</title>
+    <link>sugouu.github.io/</link>
+    <description>Recent content on Sugo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Jul 2020 11:36:48 +0800</lastBuildDate>
+    
+        <atom:link href="sugouu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>sugouu.github.io/about/</link>
+      <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>sugouu.github.io/about/</guid>
+      
+        <description>&lt;p&gt;这是Sugo的Blog&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>about hugo</title>
+      <link>sugouu.github.io/post/golang/about-hugo-of-study-note/</link>
+      <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/golang/about-hugo-of-study-note/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。利用github的home pages我们能很简单且无需vps的投入就能有属于自己的blog。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;heading&#34;&gt;快速开始&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;安装Hugo&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;二进制安装（推荐：简单、快速）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到 &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Hugo Releases&lt;/a&gt; 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）&lt;/p&gt;
+&lt;p&gt;Mac下直接使用 Homebrew 安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;源码安装
+源码编译安装，首先安装好依赖的工具：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1).Git
+2).Mercurial
+3).Go 1.3+ (Go 1.4+ on Windows)&lt;/p&gt;
+&lt;p&gt;设置好 GOPATH 环境变量，获取源码并编译：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ export GOPATH=$HOME/go
+$ go get -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;源码会下载到 $GOPATH/src 目录，二进制在 $GOPATH/bin/&lt;/p&gt;
+&lt;p&gt;如果需要更新所有Hugo的依赖库，增加 -u 参数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go get -u -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;heading-1&#34;&gt;生成站点&lt;/h1&gt;
+&lt;p&gt;使用Hugo快速生成站点，比如希望生成到 /path/to/site 路径：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo new site /path/to/site
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样就在 /path/to/site 目录里生成了初始站点，进去目录：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd /path/to/site
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;站点目录结构：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.
+├── archetypes
+│   └── default.md
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;heading-2&#34;&gt;创建文章&lt;/h1&gt;
+&lt;p&gt;创建一个 about 页面：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo new about.md
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;about.md 自动生成到了 content/about.md ，打开 about.md 看下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;About&amp;quot;
+date: 2020-06-30T18:15:22+08:00
+draft: true
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;内容是 Markdown 格式的，+++ 之间的内容是 TOML 格式的，根据你的喜好，你可以换成 YAML 格式（使用 &amp;mdash; 标记）或者 JSON 格式。&lt;/p&gt;
+&lt;p&gt;创建第一篇文章，放到 post 目录，方便之后生成聚合页面。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo new post/first.md
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开编辑 post/first.md ：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;First&amp;quot;
+date: 2020-06-30T18:18:22+08:00
+draft: true
+---
+### Hello Hugo
+
+Hello Hugo , This is my first hugo note.
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;heading-3&#34;&gt;安装主题&lt;/h1&gt;
+&lt;p&gt;到 &lt;a href=&#34;https://www.gohugo.org/theme/&#34;&gt;主题列表&lt;/a&gt; 挑选一个心仪的皮肤，比如你觉得 Hyde 皮肤不错，找到相关的 GitHub 地址，创建目录 themes，在 themes 目录里把皮肤 git clone 下来：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 创建 themes 目录
+$ cd themes
+$ git clone https://github.com/spf13/hyde.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;运行Hugo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在你的站点根目录执行 Hugo 命令进行调试：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo server --theme=hyde --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注明：v0.15 版本之后，不再需要使用 &amp;ndash;watch 参数了）&lt;/p&gt;
+&lt;p&gt;浏览器里打开： http://localhost:1313&lt;/p&gt;
+&lt;h1 id=&#34;heading-4&#34;&gt;部署&lt;/h1&gt;
+&lt;p&gt;假设你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：yourName.github.io （coderzh替换为你的github用户名）。&lt;/p&gt;
+&lt;p&gt;在站点根目录执行 Hugo 命令生成最终页面：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo --theme=hyde --baseUrl=&amp;quot;http://yourName.github.io/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;（注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。）&lt;/p&gt;
+&lt;p&gt;如果一切顺利，所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的Repository的 master 分支。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd public
+$ git init
+$ git remote add origin https://github.com/yourName/yourName.github.io.git
+$ git add -A
+$ git commit -m &amp;quot;first commit&amp;quot;
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>php auto_prepend_file、auto_append_file</title>
+      <link>sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</link>
+      <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/php/php-auto_prepend_file-auto_append_file/</guid>
+      
+        <description>&lt;h1 id=&#34;heading&#34;&gt;基础介绍&lt;/h1&gt;
+&lt;p&gt;auto_prepend_file和auto_append_file属于php配置文件中的数据处理配置选项（Data Handling Configuration Options）。
+auto_prepend_file：在主体文件之前自动分析的文件名。它文件包含在其中，就好像它是用require函数调用的一样，以加载路径的方式来使用。
+auto_append_file：在主体文件之后自动分析的文件名。它文件包含在其中，就好像它是用require函数调用的一样，以加载路径的方式来使用。
+auto_prepend_file和auto_append_file的区别一个是在主程序文件之前加载一个是在主运行程序文件之后加
+&lt;strong&gt;不过需要注意的是：如果主程序脚本使用exit()终止，auto_append_file将不会生效，配置的文件不会自动追加&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用法说明:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;公共头尾的引用.常见用法是我们用include_once在模板页面引入我们需要的头部以及尾部。但是这样引用一次的做法的不太好的一点是每个需要公共头尾的模板都需要添加上类似这样的一句“include_once(&amp;lsquo;header.tpl&amp;rsquo;)”.使用的auto_prepend_file的话，只需要配置一次auto_prepend_file(path.&amp;lsquo;header.tpl&amp;rsquo;)就好了，尾部类似.
+2.项目工程的环境，我们的项目开发测试发版上线这些过程中都涉及到不同的环境以及数据，我们可以通过设定一个环境标识字符来区分。我们在php.ini中配置
+&lt;img src=&#34;sugouu.github.io/image/auto_append_file.png&#34; alt=&#34;微信截图_20190312153818.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;然后在配置的路径上创建php文件如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;sugouu.github.io/image/auto_prepend_file.png&#34; alt=&#34;微信截图_20190312153851.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样$_SERVER[&amp;lsquo;ENVIRONMENT&amp;rsquo;]这个超全局变量就能在项目工程的任何地方被我们所使用。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>php heredoc、nowdoc</title>
+      <link>sugouu.github.io/post/php/php-heredoc-nowdoc/</link>
+      <pubDate>Wed, 01 Jul 2020 11:36:48 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/php/php-heredoc-nowdoc/</guid>
+      
+        <description>&lt;p&gt;&lt;strong&gt;Heredoc 和 Nowdoc 的背景&lt;/strong&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Here_document&#34;&gt;Here&lt;/a&gt; 文档 在 wiki 上的定义：
+在计算机学科中，here文档，又称作 heredoc、hereis、here-字串或here-脚本，是一个文件输入或者数据流输入：可以被当成完整文件的块状代码。它可以保存文字里面的换行或是缩排等空白字元。一些语言允许在字串里执行变量替换和命令替换
+heredoc、nowdoc 技术是php用来引用字符串的一种方式
+Nowdoc 从 PHP 5.3.0 版本开始支持，他和 Heredoc 的不同之处，仅是双引号和单引号的差别。 Nowdoc 在开始标记周围添加了单引号，则没有解析。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;1.标识符可以自定义 一般的 有EOT ，EOD EOF 等， 只有保持开始表示符和结束表示符一样即可。&lt;/p&gt;
+&lt;p&gt;2.结束表示符必须独占一行，且必须顶格写，最后以 ‘;’ 分号结尾。&lt;/p&gt;
+&lt;p&gt;3.所有引用的字符串中可以包含变量，无需字符串连接符。
+heredoc实例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;sugouu.github.io/image/2773910186.png&#34; alt=&#34;微信截图_20190530174318.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;nowdoc实例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;sugouu.github.io/image/2169211213.png&#34; alt=&#34;微信截图_20190530174905.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特别说明&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;php.net RFC 频道已经公布了 PHP 7.3 的 Heredoc 和 Nowdoc 语法更新，此次更新专注于代码可读性:
+Heredoc 和 Nowdoc
+有非常严格的语法，有些时候这令很多开发者避而远之，因为他们在代码中看起来非常丑陋，令代码的可读性降低。本次的更新针对此问题，对语法做出了以下两个更改：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;支持闭合标记符的缩进；&lt;/li&gt;
+&lt;li&gt;不再强制闭合标记符的换行；
+Heredocs 和 Nowdocs 的改进将会让你的 PHP 代码更加具有可读性，错误率也会降低。另一方面，因为会闭合标记符的缩进会被移除，所以输出会更加简洁直接。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Golang将日志同时输出到控制台和文件</title>
+      <link>sugouu.github.io/post/golang/golang-output-log-to-file-and-console/</link>
+      <pubDate>Wed, 11 Mar 2020 21:16:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/golang/golang-output-log-to-file-and-console/</guid>
+      
+        <description>&lt;h1 id=&#34;heading&#34;&gt;问题背景&lt;/h1&gt;
+&lt;p&gt;日常开发当中需要将golang的log包打印的日志同时输出到控制台和文件，应该如何解决这个问题？&lt;/p&gt;
+&lt;h1 id=&#34;heading-1&#34;&gt;解决思路&lt;/h1&gt;
+&lt;p&gt;log包可以通过SetOutput()方法指定日志输出的方式（Writer），但是只能指定一个输出的方式（Writer）。我们利用io.MultiWriter()将多个Writer拼成一个Writer使用的特性，把log.Println()输出的内容分流到控制台和文件当中。&lt;/p&gt;
+&lt;h1 id=&#34;heading-2&#34;&gt;代码&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;io&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;os&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()  {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;logFile&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;os&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;OpenFile&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;log.txt&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;os&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;O_CREATE&lt;/span&gt; | &lt;span style=&#34;color:#a6e22e&#34;&gt;os&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;O_APPEND&lt;/span&gt; | &lt;span style=&#34;color:#a6e22e&#34;&gt;os&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;O_RDWR&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0666&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+		panic(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;defer&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;logFile&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Close&lt;/span&gt;()
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;mw&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;io&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;MultiWriter&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;os&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Stdout&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;logFile&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;SetOutput&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;mw&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;log test&amp;#34;&lt;/span&gt;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Mac如何在shell脚本当中获取时间</title>
+      <link>sugouu.github.io/post/shell/mac-how-to-get-time-in-shell-script/</link>
+      <pubDate>Mon, 26 Aug 2019 14:00:00 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/shell/mac-how-to-get-time-in-shell-script/</guid>
+      
+        <description>&lt;h1 id=&#34;macshell&#34;&gt;Mac如何在shell脚本当中获取时间&lt;/h1&gt;
+&lt;h2 id=&#34;heading&#34;&gt;获取今天的时间&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date
+2019年 8月26日 星期一 14时02分23秒 CST
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接输入date就可以获取当前的时间（CST时间）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date -jnRu
+Mon, &lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt; Aug &lt;span style=&#34;color:#ae81ff&#34;&gt;2019&lt;/span&gt; 06:06:29 +0000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果加上参数&lt;code&gt;-jnRu&lt;/code&gt;会显示格林威治时间(GMT)&lt;/p&gt;
+&lt;h2 id=&#34;heading-1&#34;&gt;时间格式化&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+2019-08-26 14:28:14
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;格式化数据可以直接使用加号，然后配合日期符号输出
+常用日期符号&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;符号&lt;/th&gt;
+&lt;th&gt;代表意义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;%Y&lt;/td&gt;
+&lt;td&gt;年&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%m&lt;/td&gt;
+&lt;td&gt;月&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%d&lt;/td&gt;
+&lt;td&gt;日&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%H&lt;/td&gt;
+&lt;td&gt;时&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%M&lt;/td&gt;
+&lt;td&gt;分&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%S&lt;/td&gt;
+&lt;td&gt;秒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;heading-2&#34;&gt;获取昨天的时间&lt;/h2&gt;
+&lt;p&gt;mac下的date命令计算时间的方法和linux会不太一样&lt;/p&gt;
+&lt;p&gt;命令参数为&lt;code&gt;[-v[+|-]val[ymwdHMS]]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;date 后加 -v 加减一个值，最后填写格式化参数格式化输出。都是在当前时间的基础上进行加减运算的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date -v-1d +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d&amp;#34;&lt;/span&gt;
+2019-08-25
+date -v-1y +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d&amp;#34;&lt;/span&gt;
+2018-08-26
+date -v+1m +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d&amp;#34;&lt;/span&gt;
+2019-09-26
+date -v+1H +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+2019-08-26 15:40:36
+date -v+1M +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+2019-08-26 14:41:58
+date -v+1S +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+2019-08-26 14:40:12
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;heading-3&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;编写shell脚本执行的时候需要使用到时间，更多关于date命令的使用方法可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;man date
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;进行查看详细的使用方法或者输入一个错误的参数比如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date h
+date: illegal time format
+usage: date &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;-jnRu&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;-d dst&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;-r seconds&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;-t west&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;-v&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;+|-&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;val&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;ymwdHMS&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; ... 
+            &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;-f fmt date | &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;mm&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;dd&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;HH&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;MM&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;cc&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;yy&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;.ss&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;+format&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;会提示提示部分使用方法。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Mysql基本操作</title>
+      <link>sugouu.github.io/post/mysql/talk-about-mysql-operation/</link>
+      <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/mysql/talk-about-mysql-operation/</guid>
+      
+        <description>&lt;p&gt;在开始讨论Mysql的基本操作之前我们需要先明确主体，即我们操作的是什么？下面我们忽略一些具体细节来了解一下Mysql这款数据库管理数据的结构和单元。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;通过上图我们了解到Mysql可以管理多个数据库，每一个数据库又可以管理多个表，表里又管理了千千万万的数据；我们使用Mysql操作的就是数据库，数据库中的表格以及表格当中的数据。&lt;/p&gt;
+&lt;p&gt;接下来我们需要学习的内容围绕下面的5个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如何创建一个数据库？&lt;/li&gt;
+&lt;li&gt;如何创建一个表？&lt;/li&gt;
+&lt;li&gt;如何在表中创建数据？&lt;/li&gt;
+&lt;li&gt;如何从表中检索数据？&lt;/li&gt;
+&lt;li&gt;如何操作多个表？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;heading&#34;&gt;如何创建一个数据库？&lt;/h1&gt;
+&lt;p&gt;使用&lt;em&gt;create&lt;/em&gt;命令用来创建数据库，命令格式为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;create database 数据库名称;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果我们想创建一个test的数据库我们可以写：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;create database test;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样我们就创建了一个名称为test的数据库了
+后面我们会发现&lt;em&gt;create&lt;/em&gt;命令不仅可以创建数据库，还可以创建表以及一些其他东西。&lt;/p&gt;
+&lt;h2 id=&#34;heading-1&#34;&gt;如何查看刚刚创建的数据库呢？&lt;/h2&gt;
+&lt;p&gt;我们可以先使用&lt;em&gt;show&lt;/em&gt;命令用来查看现在Mysql都管理了哪些数据库。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; show databases;
++----------+
+| Database |
++----------+
+| mysql    |
+| test     |
+| tmp      |
++----------+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;show&lt;/em&gt;这个命令就如同字面翻译一样，显示，显示什么？ 显示databases，显示数据库，在后面我们会多次使用show这个命令。命令当中的数据库这个英文单词是复数形式，意味着显示很多数据库。（如果输入单数形式的database会显示错误，因为就没有这条命令，这里的提示只是为了方便记忆和理解）最后像其他大部分语言一样，命令语句结束以后要加一个分号用以表示命令输入完了。
+如果你输入的命令有误Mysql会提示如下错误：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;database&#39; at line 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这意味着我们的命令语法错误了，不符合Mysql的语法规则。错误会告诉我们错误的地方大概在哪里。&lt;/p&gt;
+&lt;h2 id=&#34;heading-2&#34;&gt;使用数据库&lt;/h2&gt;
+&lt;p&gt;创建好数据库以后我们还要让mysql知道我们当前要操作的是那个数据库。使用&lt;em&gt;use&lt;/em&gt;命令来告诉mysql我们正在操作的数据库是哪一个。语法为&lt;em&gt;use 数据库名称;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;use test;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样mysql就会知道我们当前正在操作的数据库是test数据库，方便后续的命令执行。
+如果没有使用&lt;em&gt;use&lt;/em&gt;命令去创建数据库，mysql会返回给我们一个错误提示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; create table test;
+ERROR 1046 (3D000): No database selected
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;错误1046没有数据库被选择。&lt;/p&gt;
+&lt;h1 id=&#34;heading-3&#34;&gt;如何创建一个表？&lt;/h1&gt;
+&lt;p&gt;在创建表之前我们要先简单的了解下表的构成。我们以下面这张表举例子&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;owner&lt;/th&gt;
+&lt;th&gt;species&lt;/th&gt;
+&lt;th&gt;sex&lt;/th&gt;
+&lt;th&gt;birth&lt;/th&gt;
+&lt;th&gt;death&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Fluffy&lt;/td&gt;
+&lt;td&gt;Harold&lt;/td&gt;
+&lt;td&gt;cat&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;1993-02-04&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bowser&lt;/td&gt;
+&lt;td&gt;Diane&lt;/td&gt;
+&lt;td&gt;dog&lt;/td&gt;
+&lt;td&gt;m&lt;/td&gt;
+&lt;td&gt;1979-08-31&lt;/td&gt;
+&lt;td&gt;1995-07-29&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;正如我们在数学课上学习到的那样，一个表格由行和列组成，其中表头即宠物名称（name）,主人（owner）,物种（species）,性别（sex）,出生日期（birth）,死亡日期（death）在mysql当中我们称之为字段。表头之外的每一行就代表一行数据。我们可以在每一行的字段（单元格）当中设置什么样的数据，取决于我们对该字段定义什么样子的字段数据类型。计算机不能直接理解人类语言，所以我们要对人类语言的信息进行数据分类，比如日期，数字，字符这样的分类，我们就称之为数据类型。&lt;/p&gt;
+&lt;p&gt;现在我们对表的结构有一定的了解以后就可以开始创建表了。
+涉及到创建的命令我们马上想到的就是&lt;em&gt;create&lt;/em&gt;命令。创建表和创建数据库的命令大同小异语法为&lt;em&gt;create table 表明 (字段名称 字段数据类型（显示长度）……)&lt;/em&gt;
+比如我们创建一个pet表，表当中涉及的字段属性包括宠物名称（name）,主人（owner）,物种（species）,性别（sex）,出生日期（birth）,死亡日期（death）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注：mysql的命令是不区分大小写的，所以大写的CREATE和小写的create是一样的。&lt;/p&gt;
+&lt;p&gt;通过上面的命令我们就可以创建一个pet宠物表。表中包含若干字段，比如name，我们设定的字段类型就是varchar表示的是字符类型，字符类型可以存储文字语言，字段类型后面还有一个括号，括号里面的值表示的是显示的长度，比如int(2),整数类型显示长度2，表示不管你的数值是多少，最少可以看到两个数字。假如你存的数值的3，没有满两位，就会在前面补零。假如你的数值是150，超过了显示宽度，则直接显示原始值，不做补零操作。&lt;/p&gt;
+&lt;h2 id=&#34;heading-4&#34;&gt;如何查看刚刚创建的表&lt;/h2&gt;
+&lt;p&gt;我们可以通过&lt;em&gt;show&lt;/em&gt;命令来查看我们刚刚创建的表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; show tables;
++----------------+
+| Tables_in_test |
++----------------+
+| Tickets64      |
+| channel        |
+| pet            |
+| user_relation  |
++----------------+
+4 rows in set (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;和查看数据的命令十分类似，我相信你已经发现其中的关系了。&lt;/p&gt;
+&lt;h1 id=&#34;heading-5&#34;&gt;如何在表中创建数据？&lt;/h1&gt;
+&lt;p&gt;有两个命令可以用来在表中创建数据&lt;em&gt;LOAD DATA&lt;/em&gt;和&lt;em&gt;INSERT&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;load-data&#34;&gt;LOAD DATA命令导入数据&lt;/h2&gt;
+&lt;p&gt;LOAD DATA可以把文件当中的数据导入到表格当中。&lt;/p&gt;
+&lt;p&gt;首先我们创建一个文件pet.txt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Fluffy  Harold  cat     f       1993-02-04      \N
+Claws   Gwen    cat     m       1994-03-17      \N
+Buffy   Harold  dog     f       1989-05-13      \N
+Fang    Benny   dog     m       1990-08-27      \N
+Bowser  Diane   dog     \N      1979-08-31      1995-07-29
+Chirpy  Gwen    bird    f       1998-09-11      \N
+Slim    Benny   snake   m       1996-04-29      \N
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中按照空格区分数据字段的，&lt;em&gt;\N&lt;/em&gt;表示的null，如果这个字段没有数据可以用null表示。&lt;/p&gt;
+&lt;p&gt;然后我们进入mysql,使用&lt;em&gt;LOAD DATA&lt;/em&gt;语法载入pet.txt的数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;LOAD DATA LOCAL INFILE &#39;/home/ppmoon/pet.txt&#39; INTO TABLE pet;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们先简单解析下命令语法，&lt;em&gt;LOAD DATA&lt;/em&gt;表示载入数据，载入什么地方的数据？LOCAL表示载入当前客户端所在的电脑的数据。因为你的mysql服务端很有可能是在远程服务器上的。如果在语句当中去掉LOCAL，载入数据的位置就是mysql服务端所在的电脑上的位置。&lt;em&gt;INFILE&lt;/em&gt;指的是导入文件，还有一个命令是&lt;em&gt;OUTFILE&lt;/em&gt;是导出数据。&lt;em&gt;INFILE&lt;/em&gt;命令后面就是文件存放的路径了，这部分路径是linux系统的文件路径。如果是Windows假设你的文件在d盘可以写成&lt;em&gt;d:\pet.txt&lt;/em&gt;最后&lt;em&gt;INTO&lt;/em&gt;表明数据导入的方向&lt;em&gt;TABLE&lt;/em&gt;表示数据插入到表中，不是别的地方，表的名字是什么？是pet。&lt;/p&gt;
+&lt;h2 id=&#34;insert&#34;&gt;INSERT命令插入数据&lt;/h2&gt;
+&lt;p&gt;除了LOAD DATA之外我们还可以使用&lt;em&gt;INSERT&lt;/em&gt;命令插入数据。语法格式为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;INSERT INTO 表明 VALUES (&#39;字段1&#39;,&#39;字段2&#39;……);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果我们想向pet表当中插入一条新数据，我们可以这样写：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;INSERT INTO pet VALUES (&#39;Puffball&#39;,&#39;Diane&#39;,&#39;hamster&#39;,&#39;f&#39;,&#39;1999-03-30&#39;,NULL);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;VALUES当中的字段顺序和表当中的字段顺序一一对应即可，如果没有数据可以使用NULL占位。至此你一定发现了，mysql的命令几乎就是和英文直译是一样的，稍加理解参照手册就可以学会。&lt;/p&gt;
+&lt;h1 id=&#34;heading-6&#34;&gt;如何从表中检索数据？&lt;/h1&gt;
+&lt;p&gt;使用&lt;em&gt;SELECT&lt;/em&gt;命令来查看数据，语法格式为&lt;em&gt;SELECT 字段名 FROM 表名&lt;/em&gt;，select英文直译挑选的意思，选择后面加上需要挑选的字段，也就是表格的列，如果要挑选出所有就使用*来表示。最后通过 from 命令来表明挑选那个表格当中的数据。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; select * from pet;
++--------+--------+---------+------+------------+------------+
+| name   | owner  | species | sex  | birth      | death      |
++--------+--------+---------+------+------------+------------+
+| Fluffy | Harold | cat     | f    | 1993-02-04 | NULL       |
+| Claws  | Gwen   | cat     | m    | 1994-03-17 | NULL       |
+| Buffy  | Harold | dog     | f    | 1989-05-13 | NULL       |
+| Fang   | Benny  | dog     | m    | 1990-08-27 | NULL       |
+| Bowser | Diane  | dog     | NULL | 1979-08-31 | 1995-07-29 |
+| Chirpy | Gwen   | bird    | f    | 1998-09-11 | NULL       |
+| Slim   | Benny  | snake   | m    | 1996-04-29 | NULL       |
++--------+--------+---------+------+------------+------------+
+7 rows in set (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;heading-7&#34;&gt;如何操作多个表？&lt;/h1&gt;
+&lt;p&gt;是的，我们的数据不可能只存储在一个表当中，很多时候，数据是分散在不同的表格当中的，这时候我们需要一些关联表格进行查询的命令。&lt;/p&gt;
+&lt;p&gt;我们需要再创建一个表event用来记录一些宠物相关的备忘记录，pet表和event表通过name字段进行关联：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CREATE TABLE event (name VARCHAR(20), date DATE, type VARCHAR(15), remark VARCHAR(255));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用&lt;em&gt;LOAD DATA&lt;/em&gt;导入数据
+文件event.txt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Fluffy  1995-05-15      litter  4 kittens, 3 female, 1 male
+Buffy   1993-06-23      litter  5 puppies, 2 female, 3 male
+Buffy   1994-06-19      litter  3 puppies, 3 female
+Chirpy  1999-03-21      vet     needed beak straightened
+Slim    1997-08-03      vet     broken rib
+Bowser  1991-10-12      kennel  \N
+Fang    1991-10-12      kennel  \N
+Fang    1998-08-28      birthday Gave him a new chew toy
+Claws   1998-03-17      birthday Gave him a new flea collar
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;LOAD DATA LOCAL INFILE &#39;/home/ppmoon/event.txt&#39; INTO TABLE event;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里我们需要用到一个新命令&lt;em&gt;JOIN&lt;/em&gt;这个命令用来将两个表关联起来。如果我们通过两个表的数据查询出宠物的备注信息我们可以这样写：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SELECT pet.name,remark FROM pet JOIN event ON pet.name = event.name WHERE event.type = &#39;litter&#39;;
++--------+-----------------------------+
+| name   | remark                      |
++--------+-----------------------------+
+| Fluffy | 4 kittens, 3 female, 1 male |
+| Buffy  | 5 puppies, 2 female, 3 male |
+| Buffy  | 3 puppies, 3 female         |
++--------+-----------------------------+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命令解析：
+1.多个表有重复名称字段的时候，可以使用 表名.字段名的方式来明确字段，比如pet.name指的就是pet表当中的name
+2.JOIN语句后面加表明ON用来声明两个表通过什么字段进行关联
+3.WHERE命令用来筛选条件。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>学习如何使用mysql的手册</title>
+      <link>sugouu.github.io/post/mysql/learn-how-to-read-mysql-manual/</link>
+      <pubDate>Wed, 20 Mar 2019 19:44:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/mysql/learn-how-to-read-mysql-manual/</guid>
+      
+        <description>&lt;p&gt;mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。&lt;/p&gt;
+&lt;p&gt;查看mysql的手册只需要一个问号 + 关键词 就可以了：
+比如我要查看show命令的使用说明可以直接在mysql的控制台输入 ? show&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; ? show
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意问号后面有空格。
+就可以得到show命令的使用说明&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Name: &#39;SHOW&#39;
+Description:
+SHOW has many forms that provide information about databases, tables,
+columns, or status information about the server. This section describes
+those following:
+
+SHOW {BINARY | MASTER} LOGS
+SHOW BINLOG EVENTS [IN &#39;log_name&#39;] [FROM pos] [LIMIT [offset,] row_count]
+
+······
+
+flexibility in specifying which rows to display. See
+http://dev.mysql.com/doc/refman/5.7/en/extended-show.html.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/show.html
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;同理我们可以输入 ? select ? int ? update 等等查看命令数据类型在当前版本的解释说明。这个小技巧在我们学习mysql和日常使用当中都会产生事半功倍的效果哦。&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;思考&lt;/h2&gt;
+&lt;p&gt;让我们思考一下 问号 + 命令 查看mysql手册这条命令的逻辑。
+问号 ？ 表示疑问，命令表示疑问的主体。? show 是不是颇有一种 what is show? 的感觉？这样看起来就更像是在更电脑提问了吧。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>golang复用http-request-body</title>
+      <link>sugouu.github.io/post/golang/golang-reuse-http-request-body/</link>
+      <pubDate>Sat, 20 Oct 2018 15:10:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/golang/golang-reuse-http-request-body/</guid>
+      
+        <description>&lt;h2 id=&#34;heading&#34;&gt;问题及场景&lt;/h2&gt;
+&lt;p&gt;业务当中有需要分发http.request.body的场景。比如微信回调消息只能指定一个地址，所以期望可以复制一份消息发给其他服务。由服务B和接收微信回调的服务A一起处理微信回调信息。&lt;/p&gt;
+&lt;h2 id=&#34;heading-1&#34;&gt;解决思路&lt;/h2&gt;
+&lt;p&gt;最开始考虑的是直接转发http.request。使用&lt;a href=&#34;https://studygolang.com/static/pkgdoc/pkg/net_http_httputil.htm#ReverseProxy&#34;&gt;ReverseProxy&lt;/a&gt;直接将http.request由服务A转发给服务B。但是微信涉及到验证等问题，完全调整好非常麻烦。所以转换思路，打算将http.request.body的内容直接post给服务B。&lt;/p&gt;
+&lt;p&gt;可是http.request是readcloser。我们将http.request readAll的时候讲无法再次读取http.request里面的信息。&lt;/p&gt;
+&lt;h2 id=&#34;httprequestbody&#34;&gt;如何才能将http.request.body复制使用呢？&lt;/h2&gt;
+&lt;p&gt;其中c表示的是http的上下文&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 把request的内容读取出来
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bodyBytes&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Request&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Body&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;bodyBytes&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;ioutil&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadAll&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Request&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Body&lt;/span&gt;)
+}
+&lt;span style=&#34;color:#75715e&#34;&gt;// 把刚刚读出来的再写进去
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Request&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Body&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;ioutil&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NopCloser&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;bytes&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewBuffer&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;bodyBytes&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;1.我们先将body从http.request里面读取出来，保存到一个变量里面。&lt;/p&gt;
+&lt;p&gt;2.然后再将变量里面的数据使用ioutil.NopCloser方法写回到http.request里面。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/io/ioutil/#NopCloser&#34;&gt;https://golang.org/pkg/io/ioutil/#NopCloser&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;NopCloser returns a ReadCloser with a no-op Close method wrapping the provided Reader r.&lt;/p&gt;
+&lt;p&gt;NopCloser用一个无操作的Close方法包装Reader r返回一个ReadCloser接口。&lt;/p&gt;
+&lt;p&gt;这样我们就可以再次使用c.request来进行处理了。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>golang-uint类型如何转换成string</title>
+      <link>sugouu.github.io/post/golang/golang-uint-cover-to-string/</link>
+      <pubDate>Sat, 28 Apr 2018 21:18:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/golang/golang-uint-cover-to-string/</guid>
+      
+        <description>&lt;h2 id=&#34;golang-uintstring&#34;&gt;问题golang uint类型如何转换成string&lt;/h2&gt;
+&lt;p&gt;这里值得注意的地方时，本文说的不是uint8，uint64就是uint类型。&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;解决方法&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;var a uint = 1
+b := strconv.Itoa(int(a))
+c := string(b)
+d := string(a)
+fmt.Println(c)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用strconv的Itoa方法先将uint转换成int类型，再将int类型转换成string。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>go如何编写命令行(cli)程序</title>
+      <link>sugouu.github.io/post/golang/how-to-write-a-cli-program-by-go/</link>
+      <pubDate>Mon, 19 Feb 2018 11:13:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/golang/how-to-write-a-cli-program-by-go/</guid>
+      
+        <description>&lt;h1 id=&#34;heading&#34;&gt;创建一个命令行程序&lt;/h1&gt;
+&lt;h2 id=&#34;heading-1&#34;&gt;问题&lt;/h2&gt;
+&lt;p&gt;如何使用golang创建可以在命令行当中传递参数的程序？go程序如何带参数执行？&lt;/p&gt;
+&lt;p&gt;比如我们期望使用&lt;em&gt;hello -version&lt;/em&gt;来查看hello程序的版本号码。或者输入&lt;em&gt;hello language chinese&lt;/em&gt; 来切换hello程序的语言版本。&lt;/p&gt;
+&lt;h2 id=&#34;heading-2&#34;&gt;解决&lt;/h2&gt;
+&lt;p&gt;在网络上大家可以经常搜索到的解决方案是使用go标准库当中的os.Args或者flag方法获取命令行参数再执行程序。可以很容易google和baidu的这里就不重复说明了。
+这里介绍一个开源的cli库的解决方案。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/urfave/cli&#34;&gt;urfave/cli&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该cli库集成了很多创建cli程序的工具和方法，官方github库文档功能案例介绍比较全面很容易学习使用。&lt;/p&gt;
+&lt;p&gt;截止到2018年2月19日，该开源库有875次commit，33次releases，7462个star。经过长期迭代和社区验证功能比较完整，程序稳定性也相对会可靠很多。&lt;/p&gt;
+&lt;h3 id=&#34;heading-3&#34;&gt;实现查看版本和切换语言的程序功能&lt;/h3&gt;
+&lt;p&gt;注：本案例代码只是简单的打印出language而已。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;os&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github.com/urfave/cli&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+    &lt;span style=&#34;color:#75715e&#34;&gt;// 实例化cli
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cli&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewApp&lt;/span&gt;()
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Name可以设定应用的名字
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Version可以设定应用的版本号
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Version&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.0.0&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Commands用于创建命令
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Commands&lt;/span&gt; = []&lt;span style=&#34;color:#a6e22e&#34;&gt;cli&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Command&lt;/span&gt;{
+        {
+            &lt;span style=&#34;color:#75715e&#34;&gt;// 命令的名字
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;Name&lt;/span&gt;:    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#75715e&#34;&gt;// 命令的缩写，就是不输入language只输入lang也可以调用命令
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;Aliases&lt;/span&gt;: []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;lang&amp;#34;&lt;/span&gt;},
+            &lt;span style=&#34;color:#75715e&#34;&gt;// 命令的用法注释，这里会在输入 程序名 -help的时候显示命令的使用方法
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;Usage&lt;/span&gt;:   &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;change language&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#75715e&#34;&gt;// 命令的处理函数
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;Action&lt;/span&gt;:  &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;cli&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Context&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;error&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;language&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Args&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;First&lt;/span&gt;()
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;language&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chinese&amp;#34;&lt;/span&gt;{
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Language is 中文&amp;#34;&lt;/span&gt;)
+                }&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Language is English&amp;#34;&lt;/span&gt;)
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+            },
+        },
+
+    }
+    &lt;span style=&#34;color:#75715e&#34;&gt;// 接受os.Args并启动程序
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Run&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;os&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Args&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-4&#34;&gt;效果&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;liuMacBook-Pro:gowork liuyunpeng$ go run hello.go -help
+NAME:
+   hello - A new cli application
+
+USAGE:
+   hello &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;global options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; command &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;command options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;arguments...&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+
+VERSION:
+   1.0.0
+
+COMMANDS:
+     language, lang  change language
+     help, h         Shows a list of commands or help &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; one command
+
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
+
+liuMacBook-Pro:gowork liuyunpeng$ go run hello.go -version
+hello version 1.0.0
+liuMacBook-Pro:gowork liuyunpeng$ go run hello.go lang chinese
+Language is 中文
+liuMacBook-Pro:gowork liuyunpeng$ go run hello.go lang french
+Language is English
+liuyMacBook-Pro:gowork liuyunpeng$ go run hello.go lang english
+Language is English
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更多的使用方法可以登录&lt;a href=&#34;https://github.com/urfave/cli&#34;&gt;urfave/cli&lt;/a&gt;查看。&lt;/p&gt;
+&lt;h2 id=&#34;heading-5&#34;&gt;扩展&lt;/h2&gt;
+&lt;h3 id=&#34;1&#34;&gt;1.命令行的形式&lt;/h3&gt;
+&lt;p&gt;值得大家注意的是，-flag 前面带减号（实际上应该是破折号为了方便就缩减成减号了）这种带标志方式的使用方法和 command 方法是两个概念。个人理解是前者代表参数的传递比如给 -name=ppmoon 就是给name变量传递ppmoon参数。后者是执行一段命令，比如 hello add 1 1 返回结果就是2，就是通过hello程序执行了一个1+1的运算，参数通过空格的方式依次传递到程序当中了。从使用体验的角度来说个人认为并没有什么大的区别，因为本质上来说cli程序只是没有图形化的UI界面，我们只是在命令提示符当中操作程序罢了，不管你使用什么样子的方式传递都只是形式上的变化。&lt;/p&gt;
+&lt;h3 id=&#34;2goflagosargs&#34;&gt;2.关于go标准库当中的flag包以及os.Args方法&lt;/h3&gt;
+&lt;p&gt;flag是官方提供的一个不错的cli程序扩展包，里面也包含了很多常用的方法。不管是flag还是urfave/cli都需要依赖OS包当中的os.Args方法来获取命令行参数，这一点是值得注意的便于理解cli程序的原理。&lt;/p&gt;
+&lt;h3 id=&#34;3cli&#34;&gt;3.设置环境变量在任意文件夹使用cli程序&lt;/h3&gt;
+&lt;p&gt;在Mac Windows Linux我们都会使用到命令行程序，如果想在全局任何一个文件夹下面都使用命令行程序，我们只需要将cli程序的可执行程序文件所在的文件夹路径添加到环境变量里就可以直接使用程序的名字全局调用cli程序了。具体网络上可以搜索到诸多教程这里就不赘述了。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>go如何进行交叉编译</title>
+      <link>sugouu.github.io/post/golang/golang-cross-compile/</link>
+      <pubDate>Fri, 16 Feb 2018 14:44:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/golang/golang-cross-compile/</guid>
+      
+        <description>&lt;h1 id=&#34;golang&#34;&gt;golang交叉编译&lt;/h1&gt;
+&lt;h2 id=&#34;heading&#34;&gt;问题&lt;/h2&gt;
+&lt;p&gt;golang如何在一个平台编译另外一个平台可以执行的文件。比如在mac上编译Windows和linux可以执行的文件。那么我们的问题就设定成：如何在mac上编译64位linux的可执行文件。&lt;/p&gt;
+&lt;h2 id=&#34;heading-1&#34;&gt;解决方案&lt;/h2&gt;
+&lt;p&gt;golang的交叉编译要保证golang版本在1.5以上，本解决方案实例代码1.9版本执行的。&lt;/p&gt;
+&lt;h3 id=&#34;hellogo&#34;&gt;我们想要编译的文件hello.go&lt;/h3&gt;
+&lt;p&gt;hello.go&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello, world\n&amp;#34;&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mac64linux&#34;&gt;在mac上编译64位linux的命令编译命令&lt;/h3&gt;
+&lt;p&gt;bash:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;GOOS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;linux GOARCH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;amd64 go build hello.go
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面这段代码直接在命令控制台里面运行就可以生成64位linux的可执行程序。&lt;/p&gt;
+&lt;h3 id=&#34;heading-2&#34;&gt;参数解析&lt;/h3&gt;
+&lt;p&gt;这里用到了两个变量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GOOS：目标操作系统&lt;/li&gt;
+&lt;li&gt;GOARCH：目标操作系统的架构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OS&lt;/th&gt;
+&lt;th&gt;ARCH&lt;/th&gt;
+&lt;th&gt;OS version&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;linux&lt;/td&gt;
+&lt;td&gt;386 / amd64 / arm&lt;/td&gt;
+&lt;td&gt;&amp;gt;= Linux 2.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;darwin&lt;/td&gt;
+&lt;td&gt;386 / amd64&lt;/td&gt;
+&lt;td&gt;OS X (Snow Leopard + Lion)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;freebsd&lt;/td&gt;
+&lt;td&gt;386 / amd64&lt;/td&gt;
+&lt;td&gt;&amp;gt;= FreeBSD 7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;windows&lt;/td&gt;
+&lt;td&gt;386 / amd64&lt;/td&gt;
+&lt;td&gt;&amp;gt;= Windows 2000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;编译其他平台的时候根据上面表格参数执行编译就可以了。&lt;/p&gt;
+&lt;h2 id=&#34;heading-3&#34;&gt;扩展阅读&lt;/h2&gt;
+&lt;p&gt;在网络上的诸多教程中可能会看到下面的编译命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;CGO_ENABLED&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; GOOS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;linux GOARCH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;amd64 go build hello.go
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中CGO_ENABLED=0的意思是使用C语言版本的GO编译器，参数配置为0的时候就关闭C语言版本的编译器了。自从golang1.5以后go就使用go语言编译器进行编译了。在golang1.9当中没有使用CGO_ENABLED参数发现依然可以正常编译。当然使用了也可以正常编译。比如把CGO_ENABLED参数设置成1，即在编译的过程当中使用CGO编译器，我发现依然是可以正常编译的。&lt;/p&gt;
+&lt;p&gt;实际上如果在go当中使用了C的库，比如&lt;code&gt;import &amp;quot;C&amp;quot;&lt;/code&gt;默认使用go build的时候就会启动CGO编译器，当然我们可以使用CGO_ENABLED=0来控制go build是否使用CGO编译器。&lt;/p&gt;
+&lt;p&gt;以上若有错误欢迎指正。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>SQL的IN操作符</title>
+      <link>sugouu.github.io/post/mysql/sql-operation-in/</link>
+      <pubDate>Wed, 30 Aug 2017 23:00:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/mysql/sql-operation-in/</guid>
+      
+        <description>&lt;h2 id=&#34;in&#34;&gt;IN操作符&lt;/h2&gt;
+&lt;p&gt;IN操作符允许我们在WHERE子句中规定多个值。
+这个操作符可以让我们在表中选取有一定规律的特定值，比如多个同样的订单选取最新的一个。&lt;/p&gt;
+&lt;p&gt;SQL IN 语法&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;列&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;名&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;表&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;明&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;列&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;名&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; (value1,value2,...)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;heading&#34;&gt;例子&lt;/h2&gt;
+&lt;p&gt;简单的例子网上有，这里说一个复杂点的例子&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-186cc777919401fc.png&#34; alt=&#34;image.png&#34;&gt;
+有如上图所示的表&lt;/p&gt;
+&lt;h4 id=&#34;heading-1&#34;&gt;查询要求&lt;/h4&gt;
+&lt;p&gt;1.我们要在指定chain_id上只查询一条时间最新的数据。比如ID 4和5 chain_id都为4，但是我们只能显示7月3日的ID为5的数据。
+2.这条数据的on_off如果为0我们是不抽取这条数据出来的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; file 
+&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; created_at &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; (
+&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;MAX&lt;/span&gt;(created_at)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; file &lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; chain_id &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; on_off &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;GROUP&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;BY&lt;/span&gt; chain_id
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;heading-2&#34;&gt;查询结果&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-eca0a610de9fcaf0.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;sql&#34;&gt;SQL语句的解析&lt;/h4&gt;
+&lt;p&gt;上面使用了两个WHERE&amp;hellip;IN，第一层我们想找时间最大的数据条目，第二层我们要求同时这个数据是我们的制定的chain_id,并且on_off不能为0 。同时满足三个条件得出我们的结果。
+实际上是先找出了指定chain_id上on_off不为0的数据，然后再从这个数据集当中找到指定chain_id时间最大的那些数据。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Go编写一个简单的web服务器</title>
+      <link>sugouu.github.io/post/golang/build-a-web-server-by-golang/</link>
+      <pubDate>Wed, 19 Apr 2017 01:27:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/golang/build-a-web-server-by-golang/</guid>
+      
+        <description>&lt;p&gt;Go是一款静态里语言，特点就是拥有极好的并发编程体验。下面是使用Go实现的一个并发，非阻塞的web服务器。&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;代码&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;strings&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sayhelloName&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ResponseWriter&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Request&lt;/span&gt;) {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ParseForm&lt;/span&gt;()  &lt;span style=&#34;color:#75715e&#34;&gt;//解析参数，默认是不会解析的
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Form&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;//这些信息是输出到服务器端的打印信息
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;URL&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Path&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scheme&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;URL&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Scheme&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Form&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;url_long&amp;#34;&lt;/span&gt;])
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Form&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;)
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;val:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Join&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;))
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fprintf&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello astaxie!&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//这个写入到w的是输出到客户端的
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;sayhelloName&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//设置访问的路由
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ListenAndServe&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;:9090&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//设置监听的端口
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fatal&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ListenAndServe: &amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;heading-1&#34;&gt;代码解析&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;package main&lt;/em&gt; 表示的是包名，需要在文件的第一行声明，package main这个包名表示go程序是一个可独立运行的程序，每一个go程序都应当有一个main为名称的包。
+&lt;em&gt;import&lt;/em&gt; 导入需要使用到的类库，这里和python已经java都类似。其中fmt——Formatting包含了一些格式化的IO操作。
+&lt;em&gt;func sayhelloName&lt;/em&gt; 在go当中，函数使用func声明，后面跟函数名，然后是参数，go当中声明一个变量的类型的时候会把类型写在后面比如&lt;code&gt;var a int&lt;/code&gt;。sayhelloName这个函数，w的数据类型是http.ResponseWriter，用于响应http。r是一个http.Request指针，用于接受请求。
+&lt;em&gt;main&lt;/em&gt; main()函数 其中http.HandleFunc用于处理路由，ListenAndServer用来监听请求。
+&lt;em&gt;log&lt;/em&gt; log主要用来在命令行状态下输出日志&lt;/p&gt;
+&lt;h2 id=&#34;heading-2&#34;&gt;关于并发&lt;/h2&gt;
+&lt;h4 id=&#34;listenandserve&#34;&gt;ListenAndServe&lt;/h4&gt;
+&lt;p&gt;这里创建web服务其实只是简单的使用了golang自带的http包的ListenAndServe()函数，即便是官方实现的包，在web服务领域当中也有不俗的表现，原因就在于ListenAndServe()函数当中在处理请求的时候给每一个连接创建了一个协程*go c.serve(ctx)*这样golang默认的http请求拥有更好的并发性能。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>mysql修改字段名称</title>
+      <link>sugouu.github.io/post/mysql/mysql-change-column-name/</link>
+      <pubDate>Fri, 15 Apr 2016 22:00:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/mysql/mysql-change-column-name/</guid>
+      
+        <description>&lt;h1 id=&#34;mysql&#34;&gt;在mysql当中如果字段创建以后想修改名字怎么办？&lt;/h1&gt;
+&lt;p&gt;alter table 表名 change 旧字段名 新字段名 字段属性;
+举个例子：&lt;/p&gt;
+&lt;p&gt;修改users表的name字段为username&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;alter&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;table&lt;/span&gt; users change name username varchar(&lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;个人觉得这个change的方法是销毁掉原来的字段再在原来的地方常见新字段的方法来更换字段名称。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>mysql ERROR 1820 (HY000)解决办法</title>
+      <link>sugouu.github.io/post/mysql/mysql-error-1820-hy000-solution/</link>
+      <pubDate>Mon, 01 Feb 2016 19:44:01 +0800</pubDate>
+      
+      <guid>sugouu.github.io/post/mysql/mysql-error-1820-hy000-solution/</guid>
+      
+        <description>&lt;p&gt;本解决办法是针对如何错误提示：
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.
+为了保证安全，mysql会对用户的密码设置使用期限，我们只要让他不过期就可以了。
+step 1: SET PASSWORD = PASSWORD(‘写你的新密码‘);
+step 2: ALTER USER ‘root‘@‘localhost‘ PASSWORD EXPIRE NEVER;
+step 3: flush privileges;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-9be5717310a573d1.png&#34; alt=&#34;图示&#34;&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
